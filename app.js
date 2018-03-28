@@ -6,6 +6,10 @@ const profileRoutes = require('./routes/profile-routes');
 const passportSetup = require('./config/passport-setup');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
+const bcrpt = require('bcryptjs')
+const flash = require('connect-flash')
+const validator = require('express-validator')
+const expressSession = require('express-sesssion')
 
 var port = process.env.PORT || 5000;
 

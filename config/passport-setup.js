@@ -18,7 +18,8 @@ passport.use(
         // options for google strategy
         clientID: keys.facebook.clientID,
         clientSecret: keys.facebook.clientSecret,
-        callbackURL: 'https://localhost:5000/auth/facebook/redirect'
+        proxy:true,
+        callbackURL: 'https://salty-garden-37694.herokuapp.com/auth/facebook/redirect'
     }, (accessToken, refreshToken, profile, done) => {
         // check if user already exists in our own db
         User.findOne({facebook: profile.id}).then((currentUser) => {
